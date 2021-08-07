@@ -97,12 +97,7 @@ class _NavigationState extends State<Navigation> {
     return GestureDetector(
       child: GridTile(
         child: Container(
-          color: Colors.grey,
-          child: Text(
-            '${index + 1}',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 48),
-          ),
+          child: Image.network('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
         )
       ),
       onDoubleTap: () {
@@ -116,3 +111,4 @@ class _NavigationState extends State<Navigation> {
     );
   }
 }
+
