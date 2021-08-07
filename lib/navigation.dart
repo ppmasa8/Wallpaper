@@ -7,7 +7,7 @@ class Navigation extends StatefulWidget {
 
 class _NavigationState extends State<Navigation> {
   @override
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+  var scaffoldKey = new GlobalKey<ScaffoldState>();
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +18,7 @@ class _NavigationState extends State<Navigation> {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
+
             },
           )
         ],
@@ -70,6 +71,42 @@ class _NavigationState extends State<Navigation> {
           ],
         ),
       ),
+      body: Container(
+        child: GridView.count(
+          primary: false,
+          padding: const EdgeInsets.all(20),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          crossAxisCount: 2,
+          children: List<Widget>.generate(
+              10,
+            _generator,
+          )
+        ),
+      ),
+    );
+  }
+
+  Widget _generator(int index) {
+    return GestureDetector(
+      child: GridTile(
+        child: Container(
+          color: Colors.grey,
+          child: Text(
+            '${index + 1}',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 48),
+          ),
+        )
+      ),
+      onDoubleTap: () {
+        scaffoldKey.currentState!.showSnackBar(
+          SnackBar(
+            content: Text('You double tapped on ${index + 1}'),
+            duration: const Duration(seconds: 1),
+          ),
+        );
+      },
     );
   }
 }
