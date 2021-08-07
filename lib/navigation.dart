@@ -55,6 +55,12 @@ class _NavigationState extends State<Navigation> {
             ListTile(
               leading: Icon(Icons.search),
               title: Text('Search'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Navigation())
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.category),
