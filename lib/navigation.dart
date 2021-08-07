@@ -13,7 +13,7 @@ class _NavigationState extends State<Navigation> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: const Text('Metropolitan Wallpaper'),
+        title: const Text('Awesome Photo Wallpaper'),
         actions: [
           IconButton(
             icon: Icon(Icons.search),
