@@ -37,7 +37,11 @@ class _NavigationState extends State<Navigation> {
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
-                  color: Colors.deepOrangeAccent
+                gradient: LinearGradient(
+                    colors: [Colors.purple, Colors.deepOrangeAccent],
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topLeft
+                ),
               ),
               child: Text(
                 'br',
